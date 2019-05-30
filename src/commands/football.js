@@ -16,7 +16,7 @@ const table = new Table({
 
 class FootballCommand extends Command {
   async run() {
-    cli.action.start('Fetching game times')
+    cli.action.start('Filtering game times')
     const games = await getGames(footballApi)
     const {flags} = this.parse(FootballCommand)
     const team = flags.team || 'Maryland Terrapins'

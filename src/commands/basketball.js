@@ -16,10 +16,10 @@ const table = new Table({
 
 class BasketballCommand extends Command {
   async run() {
-    cli.action.start('Fetching game times')
+    cli.action.start('Filtering game times')
     const games = await getGames(basketballApi)
     const {flags} = this.parse(BasketballCommand)
-    const team = flags.team.toUpperCase() || 'MARY'
+    const team = flags.team ? flags.team.toUpperCase() : 'MARY'
     function getTerpsGames(){
       let filterGames = games.filter(x => x.HomeTeam === team || x.AwayTeam === team)
       let game = filterGames.map((x,i) => {
