@@ -44,7 +44,7 @@ class BasketballCommand extends Command {
 BasketballCommand.description = `Get the game time and scores for your favorite NCAA DI basketball team`
 
 BasketballCommand.flags = {
-  team: flags.string({char: 't', description: `Enter your NCAAB team's abbreviated name, e.g. MARY`}),
+  team: flags.string({char: 't', description: `Enter your NCAAB team's  4 letter abbreviated name, e.g. MARY`}),
 }
 
 module.exports = BasketballCommand

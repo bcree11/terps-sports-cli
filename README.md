@@ -54,6 +54,7 @@ Get the game time of your favorite NCAA DI football team
 ```
 USAGE
   $ terps football
+  The Default team is the Maryland Terrapins
 
 OPTIONS
   -t, --team="team name"  Enter your NCAAF team's name in quotations, e.g. "Maryland Terrapins"
@@ -76,6 +77,7 @@ Get the game time and scores for your favorite NCAA DI basketball team
 ```
 USAGE
   $ terps basketball
+  The Default team is the Maryland Terrapins
 
 OPTIONS
   -t, --team=team Enter your NCAAB team's abbreviated name, e.g. MARY
