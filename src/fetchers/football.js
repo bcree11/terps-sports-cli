@@ -1,9 +1,9 @@
 const axios = require('axios')
 
-module.exports = async (location) => {
+module.exports = async (url) => {
   const results = await axios({
     method: 'get',
-    url: 'https://api.sportsdata.io/v3/cfb/scores/json/Games/2019?key=9bfa4a1538614f7a8538c39a32a4a381',
+    url: url,
     params: {
       format: 'json'
     },

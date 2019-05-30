@@ -28,17 +28,18 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`terps basketball`](#terps-basketball)
 * [`terps football`](#terps-football)
 * [`terps hello`](#terps-hello)
 * [`terps help [COMMAND]`](#terps-help-command)
 
-## `terps football`
+## `terps basketball`
 
 Describe the command here
 
 ```
 USAGE
-  $ terps football
+  $ terps basketball
 
 OPTIONS
   -n, --name=name  name to print
@@ -46,6 +47,20 @@ OPTIONS
 DESCRIPTION
   ...
   Extra documentation goes here
+```
+
+_See code: [src/commands/basketball.js](https://github.com/bcree11/terps-sports-cli/blob/v0.0.0/src/commands/basketball.js)_
+
+## `terps football`
+
+Get the game time of your favorite NCAA DI football team
+
+```
+USAGE
+  $ terps football
+
+OPTIONS
+  -t, --team=team  Enter your NCAAF team's name in quotations, e.g. "Maryland Terrapins"
 ```
 
 _See code: [src/commands/football.js](https://github.com/bcree11/terps-sports-cli/blob/v0.0.0/src/commands/football.js)_
