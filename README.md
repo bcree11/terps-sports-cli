@@ -1,7 +1,7 @@
 terps-sports
 ============
 
-Check gametime of Terps sports
+Check game time and scores of your NCAAF and NCAAB teams
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/terps-sports.svg)](https://npmjs.org/package/terps-sports)
@@ -28,60 +28,9 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`terps basketball`](#terps-basketball)
 * [`terps football`](#terps-football)
-* [`terps hello`](#terps-hello)
+* [`terps basketball`](#terps-basketball)
 * [`terps help [COMMAND]`](#terps-help-command)
-
-## `terps basketball`
-
-Describe the command here
-
-```
-USAGE
-  $ terps basketball
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/basketball.js](https://github.com/bcree11/terps-sports-cli/blob/v0.0.0/src/commands/basketball.js)_
-
-## `terps football`
-
-Get the game time of your favorite NCAA DI football team
-
-```
-USAGE
-  $ terps football
-
-OPTIONS
-  -t, --team=team  Enter your NCAAF team's name in quotations, e.g. "Maryland Terrapins"
-```
-
-_See code: [src/commands/football.js](https://github.com/bcree11/terps-sports-cli/blob/v0.0.0/src/commands/football.js)_
-
-## `terps hello`
-
-Describe the command here
-
-```
-USAGE
-  $ terps hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/bcree11/terps-sports-cli/blob/v0.0.0/src/commands/hello.js)_
 
 ## `terps help [COMMAND]`
 
@@ -98,5 +47,49 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+## `terps football`
+
+Get the game time of your favorite NCAA DI football team
+
+```
+USAGE
+  $ terps football
+
+OPTIONS
+  -t, --team="team name"  Enter your NCAAF team's name in quotations, e.g. "Maryland Terrapins"
+
+EXAMPLE
+
+┌──────────────────────────┬────┬──────────────────────────┬─────────────┬─────────────────┬──────────────┐
+│ Home Team                │ VS │ Away Team                │ Score (H-A) │ Date            │ Time         │
+├──────────────────────────┼────┼──────────────────────────┼─────────────┼─────────────────┼──────────────┤
+│ Maryland Terrapins       │ VS │ Howard Bison             │ Upcoming    │ Sat Aug 31 2019 │ 12:00 PM EST │
+├──────────────────────────┼────┼──────────────────────────┼─────────────┼─────────────────┼──────────────┤
+│ Maryland Terrapins       │ VS │ Syracuse Orange          │ Upcoming    │ Sat Sep 07 2019 │ 12:00 PM EST │
+├──────────────────────────┼────┼──────────────────────────┼─────────────┼─────────────────┼──────────────┤
+```
+
+## `terps basketball`
+
+Get the game time and scores for your favorite NCAA DI basketball team
+
+```
+USAGE
+  $ terps basketball
+
+OPTIONS
+  -t, --team=team Enter your NCAAB team's abbreviated name, e.g. MARY
+
+EXAMPLE
+
+┌───────────┬────┬───────────┬─────────────┬─────────────────┬──────────────┐
+│ Home Team │ VS │ Away Team │ Score (H-A) │ Date            │ Time         │
+├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
+│ MARY      │ VS │ DEL       │ 82-75       │ Tue Nov 06 2018 │ 7:30 PM EST  │
+├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
+│ NAVY      │ VS │ MARY      │ 64-87       │ Fri Nov 09 2018 │ 8:46 PM EST  │
+├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
+│ MARY      │ VS │ NCAT      │ 92-66       │ Mon Nov 12 2018 │ 7:00 PM EST  │
+├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
+```
 <!-- commandsstop -->
