@@ -1,10 +1,13 @@
 const {Command, flags} = require('@oclif/command')
+const getGames = require('../fetchers/football')
 
 class FootballCommand extends Command {
+
   async run() {
+    const game = await getGames()
     const {flags} = this.parse(FootballCommand)
     const name = flags.name || 'world'
-    this.log(`hello ${name} from /Users/bcree/Desktop/terps-sports-cli/src/commands/football.js`)
+    console.log(game);
   }
 }
 
