@@ -8,6 +8,5 @@ module.exports = async (location) => {
       format: 'json'
     },
   })
-
   return results.data
 }

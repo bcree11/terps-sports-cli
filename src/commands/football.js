@@ -1,13 +1,27 @@
 const {Command, flags} = require('@oclif/command')
 const getGames = require('../fetchers/football')
+const chalk = require('chalk')
 
 class FootballCommand extends Command {
 
   async run() {
-    const game = await getGames()
+    const games = await getGames()
     const {flags} = this.parse(FootballCommand)
-    const name = flags.name || 'world'
-    console.log(game);
+    const team = flags.team || 'Maryland Terrapins'
+    function getTerpsGames(){
+      let newArray = games.filter(x => x.HomeTeamName === team || x.AwayTeamName === team)
+      let game = newArray.map((x,i) => {
+        let gameDate =  new Date(newArray[i].DateTime)
+        let gameTime = gameDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', hour12: true})
+        gameDate = gameDate.toDateString()
+        if(x.HomeTeamName === team){
+          console.log(chalk.white.bgRed.bold(`${team} host ${x.AwayTeamName} on ${gameDate} at ${gameTime} EST`))
+        } else {
+           console.log(chalk.yellow.bgBlack.bold(`${team} visits ${x.HomeTeamName} on ${gameDate} at ${gameTime} EST`))
+        }
+      })
+    }
+    getTerpsGames()
   }
 }
 
@@ -17,7 +31,7 @@ Extra documentation goes here
 `
 
 FootballCommand.flags = {
-  name: flags.string({char: 'n', description: 'name to print'}),
+  team: flags.string({char: 't', description: 'team to print'}),
 }
 
 module.exports = FootballCommand
