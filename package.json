@@ -1,0 +1,52 @@
+{
+  "name": "terps-sports",
+  "description": "Check gametime of Terps sports",
+  "version": "0.0.0",
+  "author": "Brandon Cree",
+  "bin": {
+    "terps": "./bin/run"
+  },
+  "bugs": "https://github.com/bcree11/terps-sports-cli/issues",
+  "dependencies": {
+    "@oclif/command": "1.5.13",
+    "@oclif/config": "1.13.0",
+    "@oclif/plugin-help": "2.1.6"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "1.22.0",
+    "@oclif/test": "1.2.4",
+    "chai": "4.2.0",
+    "globby": "8.0.2",
+    "mocha": "5.2.0",
+    "nyc": "14.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/bcree11/terps-sports-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "terps",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "bcree11/terps-sports-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
