@@ -80,7 +80,7 @@ USAGE
   The Default team is the Maryland Terrapins
 
 OPTIONS
-  -t, --team=team Enter your NCAAB team's abbreviated name, e.g. MARY
+  -t, --team=team Enter your NCAAB team's abbreviated name, e.g. MARY or UK
 
 EXAMPLE
 
