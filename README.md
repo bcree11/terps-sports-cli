@@ -1,11 +1,10 @@
 terps-sports
 ============
 
-Check game time and scores of your NCAAF and NCAAB teams
+terps-sports retrieves team schedule data from an API for both NCAAF and NCAAB and outputs them in a table that's printed in the terminal. The default team is Maryland but you can use a flag to find data on any team, e.g. 'terps(./bin/run) football -t "Michigan Wolverines"' for Michigan's football schedule and 'terps(./bin/run) basketball -t UK' for Kentucky's basketball schedule. The NCAAF data uses full team names while the NCAAB data uses abbreviations for most teams so that one's a bit harder to find some teams data.
+
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/terps-sports.svg)](https://npmjs.org/package/terps-sports)
-[![Downloads/week](https://img.shields.io/npm/dw/terps-sports.svg)](https://npmjs.org/package/terps-sports)
 [![License](https://img.shields.io/npm/l/terps-sports.svg)](https://github.com/bcree11/terps-sports-cli/blob/master/package.json)
 
 <!-- toc -->
@@ -49,7 +48,10 @@ OPTIONS
 
 ## `terps football`
 
-Get the game time of your favorite NCAA DI football team
+Get the game time of your favorite NCAA DI football team. The default team is
+the Maryland Terrapins but you can add a flag to retrieve schedules for any
+DI football program. The flag must be the teams full name in quotes, e.g.
+'terps football -t "Michigan Wolverines"'.
 
 ```
 USAGE
@@ -72,7 +74,10 @@ EXAMPLE
 
 ## `terps basketball`
 
-Get the game time and scores for your favorite NCAA DI basketball team
+Get the game time and scores for your favorite NCAA DI men's basketball team.
+The default team is the Maryland Terrapins (MARY) but you can find any DI men's
+basketball team's schedule by using a flag of that team's abbreviation, e.g.
+terps basketball -t UK or terps basketball -t DUKE.
 
 ```
 USAGE
