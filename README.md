@@ -1,7 +1,13 @@
 terps-sports
 ============
 
-terps-sports retrieves team schedule data from an API for both NCAAF and NCAAB and outputs them in a table that's printed in the terminal. The default team is Maryland but you can use a flag to find data on any team, e.g. 'terps(./bin/run) football -t "Michigan Wolverines"' for Michigan's football schedule and 'terps(./bin/run) basketball -t UK' for Kentucky's basketball schedule. The NCAAF data uses full team names while the NCAAB data uses abbreviations for most teams so that one's a bit harder to find some teams data.
+terps-sports retrieves team schedule data from an API for both NCAAF and NCAAB
+and outputs them in a table that's printed in the terminal. The default team is
+Maryland but you can use a flag to find data on any team, e.g. 'terps(./bin/run)
+football -t "Michigan Wolverines"' for Michigan's football schedule and
+'terps(./bin/run) basketball -t UK' for Kentucky's basketball schedule. The NCAAF
+data uses full team names while the NCAAB data uses abbreviations for most teams
+so that one's a bit harder to find some teams data.
 
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
@@ -33,7 +39,7 @@ USAGE
 
 ## `terps help [COMMAND]`
 
-display help for terps
+Display help for terps-sports
 
 ```
 USAGE
@@ -59,17 +65,28 @@ USAGE
   The Default team is the Maryland Terrapins
 
 OPTIONS
-  -t, --team="team name"  Enter your NCAAF team's name in quotations, e.g. "Maryland Terrapins"
+  -t or --team="team name"  
+  Enter your NCAAF team's name in quotations, e.g. "Maryland Terrapins"
+```
 
-EXAMPLE
+**Example:**
 
-┌──────────────────────────┬────┬──────────────────────────┬─────────────┬─────────────────┬──────────────┐
-│ Home Team                │ VS │ Away Team                │ Score (H-A) │ Date            │ Time         │
-├──────────────────────────┼────┼──────────────────────────┼─────────────┼─────────────────┼──────────────┤
-│ Maryland Terrapins       │ VS │ Howard Bison             │ Upcoming    │ Sat Aug 31 2019 │ 12:00 PM EST │
-├──────────────────────────┼────┼──────────────────────────┼─────────────┼─────────────────┼──────────────┤
-│ Maryland Terrapins       │ VS │ Syracuse Orange          │ Upcoming    │ Sat Sep 07 2019 │ 12:00 PM EST │
-├──────────────────────────┼────┼──────────────────────────┼─────────────┼─────────────────┼──────────────┤
+terps football -t "Michigan Wolverines"
+
+**Generates this table:**
+
+```
+┌──────────────────────────┬────┬───────────────────────────────┬─────────────┬─────────────────┬──────────────┐
+│ Home Team                │ VS │ Away Team                     │ Score (H-A) │ Date            │ Time         │
+├──────────────────────────┼────┼───────────────────────────────┼─────────────┼─────────────────┼──────────────┤
+│ Michigan Wolverines      │ VS │ Middle Tennessee Blue Raiders │ Upcoming    │ Sat Aug 31 2019 │ 7:30 PM EST  │
+├──────────────────────────┼────┼───────────────────────────────┼─────────────┼─────────────────┼──────────────┤
+│ Michigan Wolverines      │ VS │ Army Black Knights            │ Upcoming    │ Sat Sep 07 2019 │ 12:00 PM EST │
+├──────────────────────────┼────┼───────────────────────────────┼─────────────┼─────────────────┼──────────────┤
+│ Wisconsin Badgers        │ VS │ Michigan Wolverines           │ Upcoming    │ Sat Sep 21 2019 │ 12:00 PM EST │
+├──────────────────────────┼────┼───────────────────────────────┼─────────────┼─────────────────┼──────────────┤
+
+table continues further
 ```
 
 ## `terps basketball`
@@ -77,7 +94,7 @@ EXAMPLE
 Get the game time and scores for your favorite NCAA DI men's basketball team.
 The default team is the Maryland Terrapins (MARY) but you can find any DI men's
 basketball team's schedule by using a flag of that team's abbreviation, e.g.
-terps basketball -t UK or terps basketball -t DUKE.
+'terps basketball -t UK' or 'terps basketball -t DUKE'.
 
 ```
 USAGE
@@ -85,18 +102,27 @@ USAGE
   The Default team is the Maryland Terrapins
 
 OPTIONS
-  -t, --team=team Enter your NCAAB team's abbreviated name, e.g. MARY or UK
+  -t or --team=team
+  Enter your NCAAB team's abbreviated name, e.g. MARY or UK
+```
 
-EXAMPLE
+**Example:**
 
-┌───────────┬────┬───────────┬─────────────┬─────────────────┬──────────────┐
+terps basketball -t UK
+
+**Generates this table:**
+
+```
+┌┌───────────┬────┬───────────┬─────────────┬─────────────────┬──────────────┐
 │ Home Team │ VS │ Away Team │ Score (H-A) │ Date            │ Time         │
 ├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
-│ MARY      │ VS │ DEL       │ 82-75       │ Tue Nov 06 2018 │ 7:30 PM EST  │
+│ UK        │ VS │ DUKE      │ 94-132      │ Tue Nov 06 2018 │ 9:49 PM EST  │
 ├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
-│ NAVY      │ VS │ MARY      │ 64-87       │ Fri Nov 09 2018 │ 8:46 PM EST  │
+│ UK        │ VS │ SILL      │ 80-66       │ Fri Nov 09 2018 │ 7:00 PM EST  │
 ├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
-│ MARY      │ VS │ NCAT      │ 92-66       │ Mon Nov 12 2018 │ 7:00 PM EST  │
+│ UK        │ VS │ NDAK      │ 108-65      │ Wed Nov 14 2018 │ 9:00 PM EST  │
 ├───────────┼────┼───────────┼─────────────┼─────────────────┼──────────────┤
+
+table continues further
 ```
 <!-- commandsstop -->
